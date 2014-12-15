@@ -1,0 +1,51 @@
+//
+   Created by Sarah on 11/5/2014.
+    TODO: find more efficient way to get same item with different classes!
+extends layout
+
+block content
+    .list
+        h1= title
+        if (tasks.length === 0)
+           | No tasks.
+        each task, index in tasks
+            if (task.completed !== 'true')
+                .item(class='box_#{task.priority}')
+                    .task
+                        .delete
+                            form(action='/delete', methods='post')
+                                input(type='hidden', value=task._id.toString(), name='id')
+                                input(type='hidden', value='true', name='deleted')
+                                input(type='hidden', value=locals._csrf, name='_csrf')
+                                input(type='submit' class='btn btn-danger btn-xs task-delete' value='✕')
+                        .done
+                            form(action='/complete', method='post')
+                                input(type='hidden', value=task._id.toString(), name='id')
+                                input(type='hidden', value='true', name='completed')
+                                input(type='hidden', value=locals._csrf, name='_csrf')
+                                input#complete(type='submit', class='btn btn-success btn-xs task-done', value='  ' style='float:left')
+                        .info
+                            .name
+                                h2.name=task.name
+                            .date
+                                h4(id='#{index}')=task.date
+                    script.
+                        $('#complete').click(function(){
+                            $('#complete').val('✓');
+                        });
+                        var date = '#{task.date}';
+                        var index = '#{index}';
+                        var tod = 'AM';
+                        var time = parseInt(date.substring(16, 19));
+                        console.log(time/12);
+                        //if it is in the afternoon, set the time of day to PM and subtract the morning time to make it 1-12
+                        if ((time / 12) >= 1) {//TODO: make this do multiplication!
+                            console.log(time/12);
+                            tod = 'PM';
+                            time -= 12;
+                        }
+                        if(time == 0) {
+                            time = 12;
+                        }
+                        //set each task to have its own time listed on the item
+                        document.getElementById(index).innerHTML = date.substring(4, 16) + time + date.substring(18, 21) + ' ' + tod; //HACK!

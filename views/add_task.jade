@@ -1,0 +1,133 @@
+//
+   Created by Sarah on 11/5/2014.
+extends layout
+
+block content
+    .list
+        h1 Add Task
+        .item#add-task
+            form(action='add', method='post' onsubmit='return validateForm()')
+                input(type='hidden', value=locals._csrf, name='_csrf')
+                .text
+                    .name.field
+                        h4 Task:
+                        input(type='text', name='name', placeholder='Add a new task' required)
+                    .priority.field
+                        h4 Priority:
+                        select(name='prty' placeholder='1=highest')
+                            option(selected='selected', value='1') 1
+                            option(value='2') 2
+                            option(value='3') 3
+                            option(value='4') 4
+                            option(value='5') 5
+                    #freq
+                        h5 Repeat:
+                        .days.field
+                            h4 Days:
+                            select(multiple name='numdays'  class='chosen-select')
+                                option(value='0') Monday
+                                option(selected='selected', value='1') Tuesday
+                                option(value='2') Wednesday
+                                option(value='3') Thursday
+                                option(value='4') Friday
+                                option(value='5') Saturday
+                                option(value='6') Sunday
+                            script.
+                                $('.chosen-select').chosen();
+                        .weeks.field
+                            h4 Every
+                            select(name='numweeks')
+                                option(selected='selected', value='1') 1
+                                option(value='2') 2
+                                option(value='3') 3
+                                option(value='4') 4
+                            h4 Weeks
+                        .startdate.field
+                            h4 Start Date:
+                            input(class='field', type='text', name='startdate', placeholder='Start', id='dateStart')
+                            script.
+                                $('#dateStart').datepicker();
+                        .enddate.field
+                            h4 End Date:
+                            input(class='field', type='text', name='enddate', placeholder='End', id='dateEnd')
+                            script.
+                                $('#dateEnd').datepicker();
+                    #date.field
+                        h4 Date Due:
+                        input(class='field', type='text', name='date', placeholder='Date Due', id='dateInput')
+                        script.
+                            $('#dateInput').datepicker();
+                    #time.field
+                        h4#content at:
+                        select.hour(name='hour')
+                            option(selected='selected', value='1') 1
+                            option(value='2') 2
+                            option(value='3') 3
+                            option(value='4') 4
+                            option(value='5') 5
+                            option(value='6') 6
+                            option(value='7') 7
+                            option(value='8') 8
+                            option(value='9') 9
+                            option(value='10') 10
+                            option(value='11') 11
+                            option(value='12') 12
+                        h4#colon: b :
+                        select.min(name='min')
+                            option(selected='selected', value='00') 00
+                            option(value='15') 15
+                            option(value='30') 30
+                            option(value='45') 45
+                        select.morn_aft(name='morn_aft')
+                            option(value='0') am
+                            option(selected='selected', value='1') pm
+                .repeated.field
+                    h4 Repeated:
+                    input(id='repeated' type='checkbox', name='repeated', value='1')
+                .add
+                    input.btn.btn-primary.btn-sm(type="submit", value='add' style='float:right')
+
+    script.
+         $('#freq').hide();
+         document.getElementById("dateInput").required = true;
+         $('#repeated').click(function () {
+            if (document.getElementById('repeated').checked) {
+                $('#date').hide();
+                $('#freq').show()
+                $('#add-task').css("height","50%");
+                $('.repeated').val(1);
+                document.getElementById("dateStart").required = true;
+                document.getElementById("dateEnd").required = true;
+                document.getElementById("dateInput").required = false;
+            }
+            else {
+                $('#date').show();
+                $('#freq').hide();
+                $('#add-task').css("height","30%");
+                $('.repeated').val(0);
+                document.getElementById("dateInput").required = true;
+            }
+         });
+         function parseDate(day){
+             var mdy = day.split('/');
+             return new Date(mdy[2], mdy[0]-1, mdy[1]);
+         }
+         function validateForm() {
+             var currentDate = new Date();
+             if(!document.getElementById('repeated').checked) {
+                console.log('date: %s startdate: %s enddate: %s', date, startdate, enddate);
+                var date = document.forms["myForm"]["date"].value;
+                if (parseDate(date) < currentDate) {
+                    alert("Please choose a date after today");
+                    return false;
+                }
+             } else {
+                var startdate = document.forms["myForm"]["startdate"].value;
+                var enddate = document.forms["myForm"]["enddate"].value;
+                console.log('date: %s startdate: %s enddate: %s', date, startdate, enddate);
+                if (parseDate(startdate) < currentDate || parseDate(enddate) < currentDate) {
+                    alert("Please choose a start and end date after today");
+                    return false;
+                }
+             }
+         }

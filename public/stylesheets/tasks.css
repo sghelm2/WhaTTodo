@@ -1,0 +1,81 @@
+.list h1 {
+    margin: 0 auto 30px auto;
+    text-align: center;
+    border-bottom: 3px #B20000 solid;
+    width: 200px;
+}
+
+.item, .index {
+    width: 40%;
+    padding: 0px 5px 10px 5px;
+    margin: 4px auto;
+    background-color: white;
+    box-shadow: 0px 1px .5px #888888;
+    text-align: center;
+    position: relative;
+
+}
+
+.list, .task {
+    text-align: center;
+}
+
+.task .name {
+    color: rgb(242, 242, 242);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    padding: 5px 0;
+}
+
+.task .date {
+color: rgba(242, 242, 242, .7);
+font-family: 'Open Sans', sans-serif;
+font-weight: 300;
+padding-bottom: 5px;
+}
+
+.box_1 {
+     background: #e74b37;
+}
+
+.box_2 {
+    background: #E95D4B;
+}
+
+.box_3 {
+    background: #EC6F5F;
+}
+
+.box_4 {
+    background: #EE8173;
+}
+
+.box_5 {
+    background: #F19387;
+}
+
+.delete .btn {
+    position: absolute;
+    margin-top: 1%;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border: none;
+    margin-left: 45%;
+}
+
+.delete .btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 1px .5px #888888;
+}
+
+.done .btn {
+    position: absolute;
+    top: 50%;
+    margin: -10px 0 0 0;
+    left: 5%;
+    display: inline-block;
+}
+
+.done .btn:hover {
+    cursor: pointer;
+}

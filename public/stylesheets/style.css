@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(242, 242, 242);
+    color: rgb(115, 115, 115);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, p {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    background-color: rgb(242, 242, 242);
+    padding: 5px;
+    border: 1px solid rgb(242, 242, 242);
+    box-shadow: 0px 1px .5px #888888;
+}
+
+
+.home {
+    padding-bottom: 30px;
+}
+
+.index h1, .index p {
+    margin: 30px auto;
+}
+
+.index h1 {
+    display: inline-block;
+}
+
+.index img {
+    width: 50px;
+    margin-bottom: -10px;
+}
+
+

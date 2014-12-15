@@ -1,0 +1,46 @@
+#add-task {
+    height: 30%;
+    position: relative;
+    padding-top: 10px;
+}
+
+.text {
+    width: 75%;
+    text-align: right;
+}
+
+.field h4 {
+    padding: 10px;
+    display: inline-block;
+}
+
+#freq h5 {
+    text-align: center;
+}
+
+.days h4, .priority h4, #content {
+    padding: 10px;
+    display: inline-block;
+}
+
+.add .btn {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+#time #colon{
+    padding: 5px;
+}
+
+#add-task input, select {
+    padding: 5px;
+    border: 1px solid rgba(85, 85, 85, .4);
+}
+
+#add-task input:focus {
+    outline-color: #B20000;
+}
+
+.hour, .min, .morn_aft {
+    display: inline-block;
+}

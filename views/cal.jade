@@ -1,0 +1,13 @@
+//
+   Created by Sarah on 11/11/2014.
+
+extends layout
+
+block content
+    h1= title
+    h2= "user is " + user
+    p= "Birthday is on " + bday
+    p= "Email is " + email
+    img(src!=''+imgurl)
+    each event in events
+        p= event

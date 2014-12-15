@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .index.home
+        script
+            location.reload(true); // true means don't use cache
+        h1 wha
+        img.logo(src="images/logo.png")
+        h1 odo
+        if (typeof(user) === 'undefined')
+            p Login to start a whaTTodo list!
+
+        else
+            p Start adding to your list by clicking 'Add Task'

@@ -1,0 +1,29 @@
+//
+   Created by Sarah on 11/5/2014.
+.headerwrapper
+    .appname
+        .title
+            h1 wha
+                img.logo(src="images/logo.png")
+            h1 odo
+    .navbarwrapper
+        .navbar
+            ul.nav.navbar-nav
+                li
+                    a(href='/') Home
+                li
+                    a(href='add') Add Task
+                li
+                    a(href='tasks') Todo List
+                li
+                    a(href='completed') Completed
+            if (typeof(user) !== 'undefined')
+                include user
+            else
+                a.login(href= gauthurl)
+                    .gSignInWrapper
+                            #customBtn.customGPlusSignIn
+                                .icon
+                                    img(src='images/google_g_white.png')
+                                .buttonText!='Sign in with Google'
+

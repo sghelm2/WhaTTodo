@@ -1,0 +1,169 @@
+a:visited {
+    color: rgb(85, 85, 85);
+}
+
+.headerwrapper {
+    width: 100%;
+    height: 100px;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+
+.navbarwrapper {
+    width: 100%;
+    top: 30px;
+    position: absolute;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+    box-shadow: 0px 1px .5px #888888;
+}
+
+.navbar {
+    margin-left: 15%;
+    height: 30px;
+    position: relative;
+}
+
+.navbar li {
+    padding: 8px;
+    background: none;
+    display: inline-block;
+}
+.navbar li a {
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(115, 115, 115);
+    background: none;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.navbar li a:hover{
+    background: none;
+}
+
+
+.navbar li:hover a {
+    background: none;
+    border: 2px #B20000 solid;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.appname .title h1, img {
+    display: inline-block;
+}
+
+.appname .title img {
+    margin-bottom: -10px;
+    width: 50px;
+}
+
+.projectwrapper {
+    width: 100%;
+    clear:both;
+}
+
+.pagetitle {
+    padding: 20px;
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.appname {
+    padding: 28px 0 0 20px;
+
+}
+.userlink a:hover {
+    color: #B20000;
+}
+.userlink {
+    width: 180px;
+    height: 50px;
+    position: relative;
+    margin-top: -8px;
+}
+
+/*
+.login img{
+    width: 200px;
+    position: absolute;
+    right: 5%;
+    top: 0;
+    margin-bottom: -10px;
+}*/
+
+.userlink img {
+    border-radius: 50px;
+    margin-left: 110px;
+}
+
+.userlink h3 {
+    vertical-align: middle;
+    position: absolute;
+    top: 5px;
+}
+
+.userlink .difuser {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    font-size: 12px;
+}
+
+.userlink h3, img {
+    display: inline-block;
+}
+
+.userlink {
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+
+#customBtn {
+    position: absolute;
+    right: 5%;
+    top: 0;
+    margin-bottom: -20px;
+    display: inline-block;
+    background:  #B20000;
+    color: white;
+    width: 230px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+#customBtn:hover {
+    background: #e74b37;
+    cursor: hand;
+}
+
+.icon img{
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+}
+
+.icon {
+    display: inline-block;
+    width: 35px;
+    margin: 0;
+    padding: 5px 20px 5px 5px;
+}
+
+.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    /* Use the Roboto font that is loaded in the <head> */
+    font-family: 'Roboto',arial,sans-serif;
+}
