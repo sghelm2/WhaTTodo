@@ -1,9 +1,8 @@
 {
   "name": "ToDoApp",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
-    "start": "npm install; node app"
+    "start": "node app"
   },
   "dependencies": {
     "express": "~4.9.0",
@@ -14,5 +13,8 @@
     "debug": "~2.0.0",
     "jade": "~1.6.0",
     "mocha": "~0.3.x"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
