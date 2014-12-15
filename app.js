@@ -18,7 +18,7 @@ var express = require('express'),
     index = require('./routes/index'),
     add_task = require('./routes/add_task'),
     complete = require('./routes/complete'),
-    db = mongoskin.db('mongodb://localhost:27017/tasksDB?auto_reconnect', {safe:true}),
+    db = mongoskin.db('mongodb://shlm:shlm2016@ds063180.mongolab.com:63180/whattodo', {safe:true}),
     router = express.Router(),
     app = express();
 
